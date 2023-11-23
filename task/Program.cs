@@ -8,4 +8,24 @@
 Console.WriteLine("Введите массив через пробел: ");
 string massive = Console.ReadLine();
 string[] FirstArray = massive.Split(' ');
-Console.WriteLine("Наш массив: " + string.Join(", ", FirstArray));
+Console.WriteLine("Наш изначальный массив: " + string.Join(", ", FirstArray));
+
+string[] Filter(string[] FirstArray, int maximum)
+{
+    int counter = 0;
+    for (int i = 0; i < FirstArray.Length; i++){
+        if (FirstArray[i].Length <= maximum){
+            counter++;
+        }
+    }
+    string[] SecondArray = new string[counter];
+    
+    int index = 0;
+    for (int i = 0; i < FirstArray.Length; i++){
+        if (FirstArray[i].Length <= maximum){
+            SecondArray[index] = FirstArray[i];
+            index++;
+        }
+    }
+    return SecondArray;
+}
