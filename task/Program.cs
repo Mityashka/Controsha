@@ -9,6 +9,8 @@ Console.WriteLine("Введите массив через пробел: ");
 string massive = Console.ReadLine();
 string[] FirstArray = massive.Split(' ');
 Console.WriteLine("Наш изначальный массив: " + string.Join(", ", FirstArray));
+string[] SecondArray = Filter(FirstArray, 3);
+Console.WriteLine("Наш новый массив: " + string.Join(", ", SecondArray));
 
 string[] Filter(string[] FirstArray, int maximum)
 {
